@@ -63,7 +63,7 @@ def add(*args):
     # TODO: Fill sum with the correct value, based on the
     # args provided.
     try:
-      sum_nums = sum(map(int, args))
+      sum_nums = str(sum(map(int, args)))
     except (ValueError, TypeError):
       sum_nums = "Incorrect values inputted. Please try again."
     finally:
@@ -76,7 +76,7 @@ def subtract(*args):
   try:
     num_one = int(args[0])
     num_two = int(args[1])
-    diff = num_one - num_two
+    diff = str(num_one - num_two)
   except (ValueError, TypeError):
     diff = "Incorrect values inputted. Please try again."
   finally:
@@ -89,7 +89,7 @@ def multiply(*args):
   try:
     num_one = int(args[0])
     num_two = int(args[1])
-    mult = num_one*num_two
+    mult = str(num_one*num_two)
   except (ValueError, TypeError):
     mult = "Incorrect values inputted. Please try again."
   finally:
@@ -102,13 +102,13 @@ def divide(*args):
   try:
     num_one = int(args[0])
     num_two = int(args[1])
-    div = num_one/num_two
+    div = str(round(num_one/num_two, 2))
   except (ValueError, TypeError):
-    diff = "Incorrect values inputted. Please try again."
+    div = "Incorrect values inputted. Please try again."
   except ZeroDivisionError:
     div = "Cannot divide by 0."
   finally:
-    return diff
+    return div
 
 # TODO: Add functions for handling more arithmetic operations.
 
